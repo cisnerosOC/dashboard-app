@@ -13,8 +13,7 @@
     <tr>
       <td><%= customer.first_name  %></td>
       <td><%= customer.last_name %></td>
-      <td><button type="button" class="btn btn-info">View Customer</button>
+      <td><%= link_to "View Customer", customer_path(customer.id), :class => "btn btn-info" %></td>
     </tr>
-  </a>
   <% end %>
 <table>

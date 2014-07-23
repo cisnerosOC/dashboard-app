@@ -1,0 +1,16 @@
+<h1>Employees</h1>
+<table class="table table-striped">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Action</th>
+    </tr>
+    <%@employees.each do |employee| %>
+
+    <tr>
+      <td><%= employee.first_name %></td>
+      <td><%= employee.last_name %></td>
+      <td><%= link_to "View Employee", employee_path(employee.id), :class=>"btn btn-info"%></td>
+    </tr>   
+  <%end %>
+</table>
