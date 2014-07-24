@@ -1,0 +1,4 @@
+<H1> <%=@employee.first_name%> <%= @employee.last_name %> </h1>
+<p><%=@employee.address%><br><%=@employee.city %>, <%=@employee.state %> <%=@employee.zip_code %><p>
+<%= link_to "Update Employee Info", edit_employee_path(@employee.id), :class => "btn btn-default"  %>
+ <a data-confirm="Are you sure?" data-method="delete" href="<%= "/employee/#{@employee.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a>

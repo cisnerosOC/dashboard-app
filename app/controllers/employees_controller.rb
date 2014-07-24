@@ -7,11 +7,11 @@ class EmployeesController < ApplicationController
   end
 
   def new
-    @emlpoyee = Employee.new
+    @employee = Employee.new
   end
 
   def show
-    @employe = Employee.find_by(:id =>params[:id])
+    @employee = Employee.find_by(:id =>params[:id])
   end
 
   def create
@@ -22,6 +22,9 @@ class EmployeesController < ApplicationController
       redirect_to employees_path
     else render 'new'
     end
+  end
+  def edit
+    @employee = Employee.find_by(:id =>params[:id])
   end
   def update 
     @employee = Employee.find_by(:id =>params[:id])
