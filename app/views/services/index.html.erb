@@ -1,0 +1,18 @@
+<h1>Services</h1>
+
+<button type="button" class="btn btn-default btn-xs"><a href="services/new">Create new Service</a></button>
+<br>
+<br>
+<table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <%@services.each do |service| %>
+
+    <tr>
+      <td><%= service.name %></td>
+      <td><%= link_to "View", service_path(service.id), :class=>"btn btn-info"%></td>
+    </tr>   
+  <%end %>
+</table>

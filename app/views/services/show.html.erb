@@ -1,0 +1,4 @@
+<h1><%= @service.name %></h1>
+
+<p><%= @service.description %></p>
+<a data-confirm="Would you like to update Service info?" href="<%= "/services/#{@service.id}/edit"%>"  class="btn btn-default" role="button"><%= @service.price %></a>

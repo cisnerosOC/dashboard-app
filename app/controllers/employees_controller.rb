@@ -38,7 +38,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find_by(:id=>params[:id])
 
-      if @customer.destory ="Employee has been removed from database"
+      if @employee.destory ="Employee has been removed from database"
         redirect_to employees_path
       else
         flash[:warning] = "Unsuccessful"
