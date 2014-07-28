@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+background-image: url('brickwall_@2X.png');
+font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+
+}
+
