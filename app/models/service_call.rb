@@ -1,4 +1,5 @@
 class ServiceCall < ActiveRecord::Base
+  belongs_to :customer
   has_many :service
   has_many :service_call_details
   attr_accessor :service1
