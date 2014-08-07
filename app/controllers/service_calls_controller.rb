@@ -1,5 +1,6 @@
 class ServiceCallsController < ApplicationController  
-
+  before_action :authenticate_user!
+  
   def index 
     @service_calls =ServiceCall.all
   end
