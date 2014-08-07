@@ -1,25 +1,50 @@
-                  Prefix Verb   URI Pattern                    Controller#Action
-        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
-            user_session POST   /users/sign_in(.:format)       devise/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
-           user_password POST   /users/password(.:format)      devise/passwords#create
-       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
-      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
-                         PATCH  /users/password(.:format)      devise/passwords#update
-                         PUT    /users/password(.:format)      devise/passwords#update
-cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
-       user_registration POST   /users(.:format)               devise/registrations#create
-   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
-  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
-                         PATCH  /users(.:format)               devise/registrations#update
-                         PUT    /users(.:format)               devise/registrations#update
-                         DELETE /users(.:format)               devise/registrations#destroy
-                         GET    /                              customers#index
-               customers GET    /customers(.:format)           customers#index
-                         POST   /customers(.:format)           customers#create
-            new_customer GET    /customers/new(.:format)       customers#new
-           edit_customer GET    /customers/:id/edit(.:format)  customers#edit
-                customer GET    /customers/:id(.:format)       customers#show
-                         PATCH  /customers/:id(.:format)       customers#update
-                         PUT    /customers/:id(.:format)       customers#update
-                         DELETE /customers/:id(.:format)       customers#destroy
+
+                  Prefix Verb   URI Pattern                       Controller#Action
+        new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
+            user_session POST   /users/sign_in(.:format)          devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
+           user_password POST   /users/password(.:format)         devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)     devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
+                         PATCH  /users/password(.:format)         devise/passwords#update
+                         PUT    /users/password(.:format)         devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)           devise/registrations#cancel
+       user_registration POST   /users(.:format)                  devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)          devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)             devise/registrations#edit
+                         PATCH  /users(.:format)                  devise/registrations#update
+                         PUT    /users(.:format)                  devise/registrations#update
+                         DELETE /users(.:format)                  devise/registrations#destroy
+                         GET    /                                 customers#index
+               customers GET    /customers(.:format)              customers#index
+                         POST   /customers(.:format)              customers#create
+            new_customer GET    /customers/new(.:format)          customers#new
+           edit_customer GET    /customers/:id/edit(.:format)     customers#edit
+                customer GET    /customers/:id(.:format)          customers#show
+                         PATCH  /customers/:id(.:format)          customers#update
+                         PUT    /customers/:id(.:format)          customers#update
+                         DELETE /customers/:id(.:format)          customers#destroy
+               employees GET    /employees(.:format)              employees#index
+                         POST   /employees(.:format)              employees#create
+            new_employee GET    /employees/new(.:format)          employees#new
+           edit_employee GET    /employees/:id/edit(.:format)     employees#edit
+                employee GET    /employees/:id(.:format)          employees#show
+                         PATCH  /employees/:id(.:format)          employees#update
+                         PUT    /employees/:id(.:format)          employees#update
+                         DELETE /employees/:id(.:format)          employees#destroy
+                services GET    /services(.:format)               services#index
+                         POST   /services(.:format)               services#create
+             new_service GET    /services/new(.:format)           services#new
+            edit_service GET    /services/:id/edit(.:format)      services#edit
+                 service GET    /services/:id(.:format)           services#show
+                         PATCH  /services/:id(.:format)           services#update
+                         PUT    /services/:id(.:format)           services#update
+                         DELETE /services/:id(.:format)           services#destroy
+           service_calls GET    /service_calls(.:format)          service_calls#index
+                         POST   /service_calls(.:format)          service_calls#create
+        new_service_call GET    /service_calls/new(.:format)      service_calls#new
+       edit_service_call GET    /service_calls/:id/edit(.:format) service_calls#edit
+            service_call GET    /service_calls/:id(.:format)      service_calls#show
+                         PATCH  /service_calls/:id(.:format)      service_calls#update
+                         PUT    /service_calls/:id(.:format)      service_calls#update
+                         DELETE /service_calls/:id(.:format)      service_calls#destroy

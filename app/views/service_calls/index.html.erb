@@ -1,0 +1,19 @@
+<h1>Service Calls</h1>
+<button type="button" class="btn btn-default btn-xs"><a href="employees/new">Add new employee</a></button>
+<br>
+<br>
+<table class="table table-striped">
+    <tr>
+      <th>Service Call Number</th>
+      <th>Customer</th>
+      <th>Status</th>
+    </tr>
+    <%@service_calls.each do |service_call| %>
+
+    <tr>
+      <td><%= service_call.id %></td>
+      <td><%= service_call.customer_id %></td>
+      <td><%= service_call.status%></td>
+    </tr>   
+  <%end %>
+</table>

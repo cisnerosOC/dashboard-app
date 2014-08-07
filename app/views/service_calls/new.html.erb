@@ -1,14 +1,17 @@
-<div class='col-md-6'><p>Oscar Cisneros <br>101 Northwest Point<br>Elk Grove Village, IL 60007</p></div>
-<div class='col-md-6'> <img src="http://cdn.freshome.com/wp-content/uploads/2013/05/Evening-View-Volumetric-House.jpg" alt="Home" height= 75px; width=125px;><img src='http://cdn.freshome.com/wp-content/uploads/2013/05/Swimming-Pool-And-Terrace.jpg' alt= "service_area" height= 75px; width 125px;></div>
-<div class='col-md-2'>
-<%=simple_form_for @service_call do |f|%>
-  <%= f.input :service1, label:('Vaccum Service'), as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service2, as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service3, as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service4, as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service5, as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service6, as: :boolean, checked_value: true, unchecked_value: false %>
- <%= f.input :service7  %>
- <%=f.button :submit%>
- <%end%>
-</div>
+<%= form_tag(service_calls_path) do %>        
+    <label for="customer_id">Customer:</label>
+    <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name')) %>
+    <div>
+    <%= submit_tag "Create Service Call"%>
+    </div>
+
+    <div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    </div>
+<% end %>
+
+
+
+
+
+    

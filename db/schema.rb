@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729213845) do
+ActiveRecord::Schema.define(version: 20140730020257) do
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140729213845) do
   end
 
   create_table "service_calls", force: true do |t|
-    t.string   "status"
+    t.boolean  "status",      default: false
     t.integer  "customer_id"
     t.integer  "user_id"
     t.integer  "employee_id"
