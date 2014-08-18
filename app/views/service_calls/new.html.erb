@@ -2,16 +2,17 @@
     <label for="customer_id">Customer:</label>
     <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name')) %>
     <div>
-    <%= submit_tag "Create Service Call"%>
-    </div>
-
+    <label for="service_id">Service Type:</label>
+    <%= select_tag(:service_id, options_from_collection_for_select(@services, 'id', 'name')) %>
+    <div>
+    <div>
+    <label for="service_id">Service Type:</label>
+    <%= select_tag(:employee_id, options_from_collection_for_select(@employee, 'id', 'name')) %>
     <div>
     <%= hidden_field_tag(:user_id, current_user.id) %>
     </div>
-<% end %>
-
-
-
-
-
+    <div>
+    <%= submit_tag "Create Service Call"%>
+    </div>
     
+<% end %>

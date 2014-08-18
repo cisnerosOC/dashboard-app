@@ -6,20 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body> 
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
    <a class="navbar-brand" href="">Dash</a> 
-
   </div>
-  
 </nav>  
-<% flash.each do |name, message| %>
+<div class="container">  
+    <% flash.each do |name, message| %>
 
-<%= content_tag :div, message, class: "alert alert-#{name}" %>
+    <%= content_tag :div, message, class: "alert alert-#{name}" %>
 
-<% end %>
-<%= yield %>
-
+    <% end %>
+    <%= yield %>
+</div>
 </body>
 </html>

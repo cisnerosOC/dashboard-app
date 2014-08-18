@@ -1,0 +1,14 @@
+
+<%= form_tag(service_calls_path) do %>        
+    <label for="customer_id">Customer:</label>
+    <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name')) %>
+    <div>
+    <label for="service_id">Service Type:</label>
+    <%= select_tag(:service_id, options_from_collection_for_select(@service, 'id', 'name')) %>
+    <div>
+    <%= submit_tag "Create Service Call"%>
+    </div>
+    <div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    </div>
+<% end %>

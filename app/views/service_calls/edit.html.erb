@@ -1,0 +1,34 @@
+<div class="center-block">
+  <h1><%=@service_call.customer.name %></h1>
+  <p><%=@service_call.customer.address%>,
+  <%=@service_call.customer.city%> 
+  <%=@service_call.customer.state%>
+  <%=@service_call.customer.zip_code%>
+</p>
+<h4>Service Tech: <%= @employee.name %></h4>
+<h4>Service Call Status: <%=@service_call.true_status %></h4>
+</div>
+<div>   
+<%= form_tag(service_call_path(@service_call.id), :method => :patch) do %>        
+    <div class="field"><%= label_tag("details[chlorine level]", "Chlorine Level") %> <br>
+    <%= text_field_tag("details[chlorine level]") %></div>
+    <div class="field"><%= label_tag("details[pH level]", "pH Level") %><br>
+    <%= text_field_tag("details[pH level]") %></div>
+    <div class="field"><%= label_tag("details[alkalinity level]", "Alkalinity Level") %><br>
+    <%= text_field_tag("details[alkalinity level]") %></div>
+    <div class="field"><%= label_tag("details[water temprature]", "Water Temprature(F°)") %><br>
+    <%= text_field_tag("details[water temprature]") %></div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <div class="field"><label>Status:</label><br>
+    <%= radio_button_tag(:status, "false", !@service_call.status) %>
+    <%= label_tag(:status, "Open") %></div>
+    <div class="field"><%= radio_button_tag(:status, "true", @service_call.status) %>
+    <%= label_tag(:status, "Closed") %></div>
+    </div>    
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <div>
+    <%= submit_tag "Update  Service Call"%>
+    </div>    
+<% end %>
+</div>
+

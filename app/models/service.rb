@@ -1,3 +1,3 @@
 class Service < ActiveRecord::Base
-  belongs_to :service_call
+  has_and_belongs_to_many :service_calls
 end

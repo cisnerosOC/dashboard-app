@@ -1,1 +1,14 @@
-show.html.erb
+<div class="center-block">
+  <h1><%=@service_call.customer.name %></h1>
+  <p><%=@service_call.customer.address%>,
+  <%=@service_call.customer.city%> 
+  <%=@service_call.customer.state%>
+  <%=@service_call.services[0].name%>
+</p>
+<p>Service Call ID: <%= @service_call.id %></p>
+</div>
+
+<div>
+  <h4>Status: <%= @service_call.true_status %></h4>
+  <h4>Service Type: <%= @service_call.services[0].name %></h4>
+</div>

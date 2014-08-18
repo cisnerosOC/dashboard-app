@@ -4,16 +4,18 @@
 <br>
 <table class="table table-striped">
     <tr>
-      <th>Service Call Number</th>
       <th>Customer</th>
+      <th>Service Call Number</th>
       <th>Status</th>
+      <th>Action</th>
     </tr>
     <%@service_calls.each do |service_call| %>
 
     <tr>
-      <td><%= service_call.id %></td>
-      <td><%= service_call.customer_id %></td>
-      <td><%= service_call.status%></td>
+      <td><%= service_call.customer.name %></td>
+      <td><a href="<%= service_call_path(service_call.id) %>"><%= service_call.id %></a></td>
+      <td><%= service_call.true_status%></td>
+      <td><%= link_to "Update Service Call", edit_service_call_path(service_call.id), :class=>"btn btn-info"%></td>
     </tr>   
   <%end %>
 </table>
