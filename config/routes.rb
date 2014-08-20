@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   resources :employees
   resources :services
   resources :service_calls
+
+namespace :api do 
+  namespace :v1 do 
+    resources :employees, only: [:index]
+    resources :customers, only: [:index]
+  end
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
