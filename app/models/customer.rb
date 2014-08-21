@@ -1,6 +1,15 @@
 class Customer < ActiveRecord::Base
   has_many :service_calls
 
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :address
+  validates_presence_of :city
+  validates_presence_of :state
+  validates_presence_of :zip_code
+  validates_presence_of :phone1
+  validates_uniqueness_of :address
+  
   def name 
     return "#{self.first_name} #{self.last_name}"
   end
