@@ -1,19 +1,22 @@
-<h1>Employees</h1>
-<button type="button" class="btn btn-default btn-xs"><a href="employees/new">Add new employee</a></button>
-<br>
-<br>
-<table class="table table-striped">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Action</th>
-    </tr>
-    <%@employees.each do |employee| %>
-
-    <tr>
-      <td><%= employee.first_name %></td>
-      <td><%= employee.last_name %></td>
-      <td><%= link_to "View Employee", employee_path(employee.id), :class=>"btn btn-info"%></td>
-    </tr>   
-  <%end %>
-</table>
+<div ng-app="app">
+  <div ng-controller="employeesCtrl">
+    <h1>Employees</h1>
+    <button type="button" class="btn btn-default btn-xs"><a href="employees/new">Add new employee</a></button>
+    <br>
+    <br>
+    <table class="table table-striped">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>City</th>
+          <th>Action</th>
+        </tr>
+        <tr ng-repeat="employee in employees">
+          <td>{{employee.first_name}}</td>
+          <td>{{employee.last_name}}</td>
+          <td>{{employee.city}}</td>
+          <td> <a href="/employees/{{employee.id}}" ><button class= "btn btn-info">Update Employee </button></a></td>
+        </tr>   
+    </table>
+  </div>
+</div>
