@@ -1,5 +1,5 @@
 class Employee < ActiveRecord::Base
-  
+
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :address
@@ -7,7 +7,6 @@ class Employee < ActiveRecord::Base
   validates_presence_of :state
   validates_presence_of :zip_code
   validates_presence_of :phone1
-  validates_uniqueness_of :name
 
 
 

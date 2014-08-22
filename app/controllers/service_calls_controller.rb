@@ -6,13 +6,24 @@
   end
   def show
     @service_call = ServiceCall.includes(:services).find_by(:id => params[:id])
+    @service_call_details = ServiceCallDetail.find_by(:service_call_id =>params[:id])
+    puts "boom #{@service_call_details}"
+    if @service_call.status == true
+      @status = "true"
+    else
+      @status = "false"
+    end
+        
   end
 
   def new
     @service_call = ServiceCall.new
     @customers = Customer.all
+    @customers = @customers.order("last_name")
     @services = Service.all
     @employee = Employee.all 
+    @employee = Employee.all
+    @employee = Employee.order("last_name") 
   end
   def edit
     @services = Service.all
@@ -37,6 +48,10 @@
 
   def create
     @service_call = ServiceCall.new(service_call_params)
+    date_string = params[:service_date]
+    date_bits = date_string.split("/")
+    date = Date.new(date_bits[2].to_i, date_bits[0].to_i, date_bits[1].to_i)
+    @service_call.service_date = date
     @service = Service.find_by(id: params[:service_id])
       if @service_call.save
         @service_call.services << @service

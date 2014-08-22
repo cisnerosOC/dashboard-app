@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808015750) do
+ActiveRecord::Schema.define(version: 20140821221312) do
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140808015750) do
     t.string   "phone2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",      default: "", null: false
   end
 
   create_table "employees", force: true do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140808015750) do
     t.string   "phone2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",       default: "", null: false
   end
 
   create_table "service_call_details", force: true do |t|
@@ -49,12 +51,13 @@ ActiveRecord::Schema.define(version: 20140808015750) do
   end
 
   create_table "service_calls", force: true do |t|
-    t.boolean  "status",      default: false
+    t.boolean  "status",       default: false
     t.integer  "customer_id"
     t.integer  "user_id"
     t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "service_date", default: '2014-08-21 00:00:00'
   end
 
   create_table "service_calls_services", id: false, force: true do |t|

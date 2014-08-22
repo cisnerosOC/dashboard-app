@@ -1,18 +1,32 @@
-<%= form_tag(service_calls_path) do %>        
+<h1 class= >Service Calls</h1>
+
+
+
+
+<%= form_tag(service_calls_path,:class => "well") do %>        
     <label for="customer_id">Customer:</label>
-    <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name')) %>
+    <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name'),prompt: "Select Customer", class: "form-group") %>
     <div>
     <label for="service_id">Service Type:</label>
-    <%= select_tag(:service_id, options_from_collection_for_select(@services, 'id', 'name')) %>
+    <%= select_tag(:service_id, options_from_collection_for_select(@services, 'id', 'name'),prompt: "Select Service", class: "form-group") %>
     <div>
     <div>
-    <label for="service_id">Service Type:</label>
-    <%= select_tag(:employee_id, options_from_collection_for_select(@employee, 'id', 'name')) %>
+    <label for="employee_id">Employee:</label>
+    <%= select_tag(:employee_id, options_from_collection_for_select(@employee, 'id', 'name'),prompt: "Select Employee", class: "form-group") %>
+    <div>
+    <label for="service_date">Service Date:</label>
+    <%= text_field_tag(:service_date, value= DateTime.now.strftime("%m/%d/%Y"), id: "datepicker", data: {behvaiour: "datepicker"}) %>
     <div>
     <%= hidden_field_tag(:user_id, current_user.id) %>
     </div>
     <div>
-    <%= submit_tag "Create Service Call"%>
+    <br>        
+    <%= submit_tag "Create Service Call", class:"btn btn-default"%>
     </div>
     
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#datepicker').datepicker();
+  })
+</script>

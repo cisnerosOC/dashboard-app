@@ -14,7 +14,7 @@ def index
   def create
     @service = Service.create(service_params)
     flash[:success] = 'Service  Successfully created.'
-    redirect_to service_path
+    redirect_to service_path(@service.id)
   end
   def edit
     @service = Service.find_by(:id =>params[:id])

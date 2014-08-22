@@ -29,6 +29,8 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    bootstrap-datepicker-rails (1.3.0.2)
+      railties (>= 3.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -48,6 +50,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    faker (1.4.3)
+      i18n (~> 0.5)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.1.3)
@@ -67,6 +71,7 @@ GEM
     normalize-rails (3.0.1)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
+    populator (1.0.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -148,13 +153,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datepicker-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
+  faker
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
   normalize-rails
+  populator
   quiet_assets
   rails (= 4.1.1)
   rspec-rails (~> 3.0.0)

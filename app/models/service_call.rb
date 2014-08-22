@@ -11,7 +11,10 @@ class ServiceCall < ActiveRecord::Base
       return "Closed"
     end
   end
-
+  def date
+    @date = self.service_date
+    return @date.strftime("%a, %b %e %Y")
+  end
 
   
 end

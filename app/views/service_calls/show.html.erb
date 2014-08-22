@@ -1,14 +1,22 @@
-<div class="center-block">
+<div class="well",>
   <h1><%=@service_call.customer.name %></h1>
-  <p><%=@service_call.customer.address%>,
-  <%=@service_call.customer.city%> 
-  <%=@service_call.customer.state%>
-  <%=@service_call.services[0].name%>
+  <p><%=@service_call.customer.address%> <br>
+  <address><%=@service_call.customer.city%>, <%=@service_call.customer.state%> <%=@service_call.customer.zip_code%></address> 
 </p>
-<p>Service Call ID: <%= @service_call.id %></p>
-</div>
 
-<div>
-  <h4>Status: <%= @service_call.true_status %></h4>
-  <h4>Service Type: <%= @service_call.services[0].name %></h4>
 </div>
+<%if @status == "false" %>
+  <div class="well">
+    <h4>Status: <%= @service_call.true_status %></h4>
+    <h4>Service Type: <%= @service_call.services[0].name %></h4>
+    <h4> <%=@service_call.date %></h4>
+    <p>Service Call ID: <%= @service_call.id %></p>
+  </div>
+<% elsif @status == 'true' %>
+  <div class="well">
+    <ul>
+      <li><%= @service_call_details.name %></li>
+      
+    </ul>
+  </div>
+<%end %>

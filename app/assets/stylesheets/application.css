@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap-datepicker3
  *= require normalize-rails 
  *= require_self
  */
