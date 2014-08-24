@@ -21,7 +21,12 @@ background-image: url('fabric_plaid.png');
 font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 padding-top: 51px;
 }
+.stitched_element {
+border: 2px dashed  #ffffff;
+box-shadow: 0 0 0 2px #000000;
+padding: 8px;
 
+}
 /*
  * Global add-ons
  */

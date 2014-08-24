@@ -1,17 +1,23 @@
-<div ng-app="app">
-  <div ng-controller="employeesCtrl">
-    <h1>Employees</h1>
+
+
+<div class ="panel panel-default" ng-app="app">
+  <div class="panel-heading">
+    <span><h1>Employees</h1> Filter <input type="Search" ng-model="query"></span>
     <button type="button" class="btn btn-default btn-xs"><a href="/employees/new">Add new employee</a></button>
+    
+  </div>
+  <div class = "panel panel-body"ng-controller="employeesCtrl">
+    
     <br>
     <br>
     <table class="table table-striped">
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>City</th>
+          <th ng-click="predicate = 'first_name'; reverse=!reverse">First Name</th>
+          <th ng-click="predicate = 'last_name'; reverse=!reverse">Last Name</th>
+          <th ng-click="predicate = 'city'; reverse=!reverse">City</th>
           <th>Action</th>
         </tr>
-        <tr ng-repeat="employee in employees">
+        <tr ng-repeat="employee in employees | orderBy:predicate:reverse | filter:query">
           <td>{{employee.first_name}}</td>
           <td>{{employee.last_name}}</td>
           <td>{{employee.city}}</td>
