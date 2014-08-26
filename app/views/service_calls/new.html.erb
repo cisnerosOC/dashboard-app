@@ -2,7 +2,7 @@
 
 
 
-
+<div class="well ">
 <%= form_tag(service_calls_path,:class => "well") do %>        
     <label for="customer_id">Customer:</label>
     <%= select_tag(:customer_id, options_from_collection_for_select(@customers, 'id', 'name'),prompt: "Select Customer", class: "form-group") %>
@@ -15,7 +15,7 @@
     <%= select_tag(:employee_id, options_from_collection_for_select(@employee, 'id', 'name'),prompt: "Select Employee", class: "form-group") %>
     <div>
     <label for="service_date">Service Date:</label>
-    <%= text_field_tag(:service_date, value= DateTime.now.strftime("%m/%d/%Y"), id: "datepicker", data: {behvaiour: "datepicker"}) %>
+    <%= text_field_tag(:service_date, value= DateTime.now.strftime("%m/%d/%Y"), id: "datepicker", data: {behvaiour:  "datepicker"}) %>
     <div>
     <%= hidden_field_tag(:user_id, current_user.id) %>
     </div>
@@ -25,6 +25,7 @@
     </div>
     
 <% end %>
+</div>
 <script type="text/javascript">
   $(document).ready(function(){
     $('#datepicker').datepicker();

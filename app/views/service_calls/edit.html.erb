@@ -18,6 +18,8 @@
     <%= text_field_tag("details[alkalinity level]") %></div>
     <div class="field"><%= label_tag("details[water temprature]", "Water Temprature(F°)") %><br>
     <%= text_field_tag("details[water temprature]") %></div>
+    <div class="field"><%= label_tag("details[additional Info]", "Additional Info") %><br>
+    <%= text_area_tag("details[Additional Info]") %></div>
     <%= hidden_field_tag(:user_id, current_user.id) %>
     <div class="field"><label>Status:</label><br>
     <%= radio_button_tag(:status, "false", !@service_call.status) %>

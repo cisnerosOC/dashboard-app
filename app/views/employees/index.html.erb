@@ -1,16 +1,15 @@
-
-
 <div class ="panel panel-default" ng-app="app">
   <div class="panel-heading">
-    <span><h1>Employees</h1> Filter <input type="Search" ng-model="query  "></span>
-    <button type="button" class="btn btn-default btn-xs"><a href="/employees/new">Add new employee</a></button>
+    <span><h1>Employees</h1> 
+      <button type="button" class="btn btn-default btn-xs"><a href="/employees/new">Add new employee</a></button> Filter <input type="Search" ng-model="query  "></span>
+    
     
   </div>
-  <div class = "panel panel-body"ng-controller="employeesCtrl">
+  <div class = "panel panel-body table-bordered"ng-controller="employeesCtrl">
     
     <br>
     <br>
-    <table class="table table-striped">
+    <table class="table table-condensed">
         <tr>
           <th ng-click="predicate = 'first_name'; reverse=!reverse">First Name</th>
           <th ng-click="predicate = 'last_name'; reverse=!reverse">Last Name</th>

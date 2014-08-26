@@ -17,6 +17,8 @@ gem 'populator'
 gem 'quiet_assets'
 gem 'simple_form'
 gem 'devise'
+gem 'autoprefixer-rails'
+gem 'will_paginate', '~> 3.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

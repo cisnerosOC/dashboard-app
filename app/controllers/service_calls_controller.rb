@@ -2,11 +2,12 @@
   before_action :authenticate_user!
   
   def index 
-    @service_calls =ServiceCall.all
+    @service_calls =ServiceCall.all.sort_by{|s| s.service_date}
+
   end
   def show
     @service_call = ServiceCall.includes(:services).find_by(:id => params[:id])
-    @service_call_details = ServiceCallDetail.find_by(:service_call_id =>params[:id])
+    @service_call_details = ServiceCallDetail.where(:service_call_id =>params[:id])
     puts "boom #{@service_call_details}"
     if @service_call.status == true
       @status = "true"

@@ -15,6 +15,11 @@ class ServiceCall < ActiveRecord::Base
     @date = self.service_date
     return @date.strftime("%a, %b %e %Y")
   end
+  def short_date
+    date = self.service_date
+    return date.strftime("%m/%d/%Y")
+  end
+
 
   
 end

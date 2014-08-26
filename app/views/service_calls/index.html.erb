@@ -1,21 +1,30 @@
-<h1>Service Calls</h1>
-<button type="button" class="btn btn-default btn-xs"><a href="service_calls/new">Create New Service Call</a></button>
-<br>
-<br>
-<table class="table table-striped">
-    <tr>
-      <th>Customer</th>
-      <th>Service Call Number</th>
-      <th>Status</th>
-      <th>Action</th>
-    </tr>
-    <%@service_calls.each do |service_call| %>
-
-    <tr>
-      <td><%= service_call.customer.name %></td>
-      <td><a href="<%= service_call_path(service_call.id) %>"><%= service_call.id %></a></td>
-      <td><%= service_call.true_status%></td>
-      <td><%= link_to "Update Service Call", edit_service_call_path(service_call.id), :class=>"btn btn-info"%></td>
-    </tr>   
-  <%end %>
-</table>
+<div class ="panel panel-default">
+  <div class="panel-heading">
+    <h1>Service Calls</h1>
+    <button type="button" class="btn btn-default btn-xs"><a href="service_calls/new">Create New Service Call</a></button>
+    <br>
+    <br>
+    </div>
+    <div class="panel-body">
+    <table class="table table-striped">
+        <tr>
+          <th>Service Call Number</th>
+          <th>Customer</th>
+          <th>Service Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <%@service_calls.each do |service_call| %>
+        <% if service_call.true_status != "Closed" %>
+        <tr>
+          <td width="15%"><a href="<%= service_call_path(service_call.id) %>"><%= service_call.id %></a></td>
+          <td><%= service_call.customer.name %></td>
+          <td><%= service_call.true_status%></td>
+          <td><%= service_call.short_date%></td>
+          <td><%= link_to "Update Service Call", edit_service_call_path(service_call.id), :class=>"btn btn-info"%></td>
+        </tr>   
+        <%end %>
+      <%end %>
+    </table>
+  </div>
+</div>
