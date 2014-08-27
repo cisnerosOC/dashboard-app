@@ -17,7 +17,7 @@
  */
 
 body{
-background-image: url('fabric_plaid.png');
+background-image: image-url('fabric_plaid.png');
 font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 padding-top: 51px;
 }
