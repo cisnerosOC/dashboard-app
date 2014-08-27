@@ -12,7 +12,7 @@
     })};
     getData();
     $scope.next = function(click){
-      console.log(click)
+
       if(click === "next"){
       $scope.page += 1;
       pageCheck();
