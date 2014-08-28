@@ -1,4 +1,35 @@
-<H1> <%=@customer.first_name%> <%= @customer.last_name %> </h1>
-<p><%=@customer.address%><br><%=@customer.city %>, <%=@customer.state %> <%=@customer.zip_code %><p>
-<%= link_to "Update Customer Info", edit_customer_path(@customer.id), :class => "btn btn-default"  %>
- <a data-confirm="Are you sure?" data-method="delete" href="<%= "/customers/#{@customer.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a>
+<div class="well">
+  <div class="row">
+    <div class="col col-md-8">
+    <H1> <%=@customer.first_name%> <%= @customer.last_name %> </h1>
+    <p><%=@customer.address%><br><%=@customer.city %>, <%=@customer.state %> <%=@customer.zip_code %><p>
+    <%= link_to "Update Customer Info", edit_customer_path(@customer.id), :class => "btn btn-default"  %>
+     <a data-confirm="Are you sure?" data-method="delete" href="<%= "/customers/#{@customer.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a> </div>
+     <div class="col col-md-4">
+       <img src="http://luxedb.com/wp-content/uploads/2012/11/Luxury-Mercer-Island-Mansion-1.jpeg" height="150" width="200"alt="">
+     </div>
+   </div>
+</div>
+ <div class="well">
+<table class="table table-striped">
+        <tr>
+          <th>Service Call Number</th>
+          <th>Customer</th>
+          <th>Service Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <%@service_calls.each do |service_call| %>
+        
+        <tr>
+          <td width="15%"><a href="<%= service_call_path(service_call.id) %>"><%= service_call.id %></a></td>
+          <td><%= service_call.customer.name %></td>
+          <td><%= service_call.true_status%></td>
+          <td><%= service_call.short_date%></td>
+          <td>
+            <a class="btn btn-info" href="<%= service_call_path(service_call.id) %>">View Service Call</a></button>
+          </td>
+        </tr>           
+      <%end %>
+    </table>
+</div>

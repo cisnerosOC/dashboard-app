@@ -1,4 +1,36 @@
-<H1> <%=@employee.first_name%> <%= @employee.last_name %> </h1>
-<p><%=@employee.address%><br><%=@employee.city %>, <%=@employee.state %> <%=@employee.zip_code %><p>
-<%= link_to "Update Employee Info", edit_employee_path(@employee.id), :class => "btn btn-default"  %>
- <a data-confirm="Are you sure?" data-method="delete" href="<%= "/employee/#{@employee.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a>
+<div class="well">
+  <div class="row">
+    <div class="col col-md-8">
+    <H1> <%=@employee.first_name%> <%= @employee.last_name %> </h1>
+    <p><%=@employee.address%><br><%=@employee.city %>, <%=@employee.state %> <%=@employee.zip_code %><p>
+    <%= link_to "Update Employee Info", edit_employee_path(@employee.id), :class => "btn btn-default"  %>
+     <a data-confirm="Are you sure?" data-method="delete" href="<%= "/employee/#{@employee.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a>
+     </div>
+     <div class="col col-md-4">
+      <div class="profile-circular-mask"><img class="alignnone" src="http://www.oscarcisnerosjr.com/images/avatar.jpg" alt=""  /></div>
+      </div>
+   </div>
+</div>
+<div class="well">
+<table class="table table-striped">
+        <tr>
+          <th>Service Call Number</th>
+          <th>Customer</th>
+          <th>Service Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <%@service_calls.each do |service_call| %>
+        
+        <tr>
+          <td width="15%"><a href="<%= service_call_path(service_call.id) %>"><%= service_call.id %></a></td>
+          <td><%= service_call.customer.name %></td>
+          <td><%= service_call.true_status%></td>
+          <td><%= service_call.short_date%></td>
+          <td>
+            <a class="btn btn-info" href="<%= service_call_path(service_call.id) %>">View Service Call</a></button>
+          </td>
+        </tr>           
+      <%end %>
+  </table>
+</div>

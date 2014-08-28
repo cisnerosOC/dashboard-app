@@ -12,6 +12,8 @@
 
   def show
     @employee = Employee.find_by(:id =>params[:id])
+    @service_calls = ServiceCall.where(:employee_id =>params[:id])
+    return  @service_calls
   end
 
   def create

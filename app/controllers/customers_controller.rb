@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
   end
   def show
     @customer = Customer.find_by(:id => params[:id])
+    @service_calls = ServiceCall.where(:customer_id =>params[:id])
   end
 
   def create

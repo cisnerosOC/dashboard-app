@@ -1,4 +1,4 @@
-<div class="center-block">
+<div class="well">
   <h1><%=@service_call.customer.name %></h1>
   <p><%=@service_call.customer.address%>,
   <%=@service_call.customer.city%> 
@@ -8,7 +8,7 @@
 <h4>Service Tech: <%= @employee.name %></h4>
 <h4>Service Call Status: <%=@service_call.true_status %></h4>
 </div>
-<div>   
+<div class="well">   
 <%= form_tag(service_call_path(@service_call.id), :method => :patch) do %>        
     <div class="field"><%= label_tag("details[chlorine level]", "Chlorine Level") %> <br>
     <%= text_field_tag("details[chlorine level]") %></div>
@@ -25,8 +25,7 @@
     <%= radio_button_tag(:status, "false", !@service_call.status) %>
     <%= label_tag(:status, "Open") %></div>
     <div class="field"><%= radio_button_tag(:status, "true", @service_call.status) %>
-    <%= label_tag(:status, "Closed") %></div>
-    </div>    
+    <%= label_tag(:status, "Closed") %></div>  
     <%= hidden_field_tag(:user_id, current_user.id) %>
     <div>
     <%= submit_tag "Update  Service Call"%>
